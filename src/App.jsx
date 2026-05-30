@@ -1,10 +1,17 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Login from './pages/Login'
+import Registro from './pages/Registro'
+import Dashboard from './pages/Dashboard' // 👈 Importamos el nuevo Dashboard
+
 function App() {
   return (
-    <div className="min-h-screen bg-slate-900 flex items-center justify-center">
-      <h1 className="text-5xl font-extrabold text-emerald-400 tracking-tight">
-        ¡CREA RENACIÓ!
-      </h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/registro" element={<Registro />} />
+        <Route path="/dashboard" element={<Dashboard />} /> {/* 👈 Actualizamos la ruta */}
+      </Routes>
+    </BrowserRouter>
   )
 }
 
